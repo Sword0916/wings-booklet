@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>测试页面</title>
+    <style type="text/css">
+        #scroll{
+            /*width: 500px;*/
+            /*height: 1200px;*/
+            overflow: auto;
+            display: flex;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .page{position:relative; width:600px; flex-shrink:0; height:1000px; border:1px solid black; page-break-before: always;}
+        .page .foot{font-size: 14px; width: 100%; position: absolute; bottom: 8px;}
+        .page .center{text-align: center !important;}
+    </style>
+    <script type="text/javascript" src="../dist/wings-booklet.js"></script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>测试内容</h1>
+        <h4>打开控制台查看输出内容</h4>
+    </div>
+
+    <div id="scroll">
+        <div class="page">
+            <div>第一页</div>
+            <div class="foot center"><span>第 1 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第二页</div>
+            <div class="foot center"><span>第 2 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第三页</div>
+            <div class="foot center"><span>第 3 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第四页</div>
+            <div class="foot center"><span>第 4 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第五页</div>
+            <div class="foot center"><span>第 5 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第六页</div>
+            <div class="foot center"><span>第 6 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第七页</div>
+            <div class="foot center"><span>第 7 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第八页</div>
+            <div class="foot center"><span>第 8 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第九页</div>
+            <div class="foot center"><span>第 9 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十页</div>
+            <div class="foot center"><span>第 10 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十一页</div>
+            <div class="foot center"><span>第 11 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十二页</div>
+            <div class="foot center"><span>第 12 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十三页</div>
+            <div class="foot center"><span>第 13 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十四页</div>
+            <div class="foot center"><span>第 14 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十五页</div>
+            <div class="foot center"><span>第 15 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十六页</div>
+            <div class="foot center"><span>第 16 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十七页</div>
+            <div class="foot center"><span>第 17 页 共 18 页</span></div>
+        </div>
+        <div class="page">
+            <div>第十八页</div>
+            <div class="foot center"><span>第 18 页 共 18 页</span></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let booklet = new WingsBooklet({
+        scrollDom: document.getElementById("scroll"),
+        className: "page",
+        direction: "horizontal", //水平方向
+        easeType: "Linear", //缓动类型（Linear为匀速）（参照./assets/images/欢动函数.png）
+        flipDuration: 2000,//跳转的时长
+        turnPage: turnPage,//滚动翻页回调
+        beforeFlipPage: beforeFlipPage,//跳转前回调
+        afterFlipPage: afterFlipPage//跳转后回调
+    });
+
+    //滚动翻页后回调(滚动翻页时触发)
+    function turnPage(pastIndex, currentIndex) {
+        console.log("turnPage", `从 ${pastIndex} 到 ${currentIndex}`);
+    }
+
+    //跳转开始前回调（跳转某页开始前触发）
+    function beforeFlipPage(currentIndex) {
+        console.log("beforeFlipPage", `当前是 ${currentIndex}`);
+    }
+
+    //跳转结束后回调（跳转某页结束后触发）
+    function afterFlipPage(currentIndex) {
+        console.log("afterFlipPage", `当前是 ${currentIndex}`);
+    }
+
+    setTimeout(() => {
+        booklet.flipTo(3);
+    }, 3000);
+
+    setTimeout(() => {
+        booklet.flipTo(10);
+    }, 6000);
+
+    setTimeout(() => {
+        booklet.flipTo(0);
+    }, 9000);
+
+
+</script>
+</html>
