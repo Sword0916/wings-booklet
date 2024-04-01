@@ -78,60 +78,17 @@
     <div class="page-number">5</div>
     <div class="page-number">6</div>
     <div class="page-number">7</div>
-    <div class="page-number">8</div>
-    <div class="page-number">9</div>
-    <div class="page-number">10</div>
 </div>
 
 <div id="scroll-box">
-    <div class="page">
-        <div>第一页</div>
-        <div class="foot center"><span>第 1 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第二页</div>
-        <div class="foot center"><span>第 2 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第三页</div>
-        <div class="foot center"><span>第 3 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第四页</div>
-        <div class="foot center"><span>第 4 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第五页</div>
-        <div class="foot center"><span>第 5 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第六页</div>
-        <div class="foot center"><span>第 6 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第七页</div>
-        <div class="foot center"><span>第 7 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第八页</div>
-        <div class="foot center"><span>第 8 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第九页</div>
-        <div class="foot center"><span>第 9 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第十页</div>
-        <div class="foot center"><span>第 10 页 共 10 页</span></div>
-    </div>
+    <img src="./assets/images/竖向长图不等分.png"/>
 </div>
 </body>
 <script type="text/javascript">
     let scrollDom = document.getElementById("scroll-box");//出现滚动条的节点
     let booklet = new WingsBooklet({
         scrollDom: scrollDom,//出现滚动条的节点
-        className: "page",//每一页的class
-        offset: -50,//设置偏移量
+        splitProportions: [0.1, 0.2, 0.1, 0.2, 0.1, 0.2, 0.1],//分割比例
         turnPage: turnPage,//滚动翻页回调
         beforeFlipPage: beforeFlipPage,//跳转前回调
         afterFlipPage: afterFlipPage//跳转后回调

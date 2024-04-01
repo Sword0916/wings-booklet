@@ -18,12 +18,14 @@
             width: 600px;
             height: 400px;
             overflow: auto;
+            display: flex;
         }
 
         .page {
             position: relative;
+            flex-shrink:0;
             width: 500px;
-            height: 500px;
+            height: 350px;
             border: 1px solid black;
             page-break-before: always;
         }
@@ -84,54 +86,15 @@
 </div>
 
 <div id="scroll-box">
-    <div class="page">
-        <div>第一页</div>
-        <div class="foot center"><span>第 1 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第二页</div>
-        <div class="foot center"><span>第 2 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第三页</div>
-        <div class="foot center"><span>第 3 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第四页</div>
-        <div class="foot center"><span>第 4 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第五页</div>
-        <div class="foot center"><span>第 5 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第六页</div>
-        <div class="foot center"><span>第 6 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第七页</div>
-        <div class="foot center"><span>第 7 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第八页</div>
-        <div class="foot center"><span>第 8 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第九页</div>
-        <div class="foot center"><span>第 9 页 共 10 页</span></div>
-    </div>
-    <div class="page">
-        <div>第十页</div>
-        <div class="foot center"><span>第 10 页 共 10 页</span></div>
-    </div>
+    <img src="./assets/images/横向长图.png"/>
 </div>
 </body>
 <script type="text/javascript">
     let scrollDom = document.getElementById("scroll-box");//出现滚动条的节点
     let booklet = new WingsBooklet({
         scrollDom: scrollDom,//出现滚动条的节点
-        className: "page",//每一页的class
-        offset: -50,//设置偏移量
+        splitNumber: 10,//分割份数
+        direction: "horizontal",//水平方向
         turnPage: turnPage,//滚动翻页回调
         beforeFlipPage: beforeFlipPage,//跳转前回调
         afterFlipPage: afterFlipPage//跳转后回调

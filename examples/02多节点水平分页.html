@@ -18,12 +18,14 @@
             width: 600px;
             height: 400px;
             overflow: auto;
+            display: flex;
         }
 
         .page {
             position: relative;
+            flex-shrink:0;
             width: 500px;
-            height: 500px;
+            height: 350px;
             border: 1px solid black;
             page-break-before: always;
         }
@@ -131,7 +133,7 @@
     let booklet = new WingsBooklet({
         scrollDom: scrollDom,//出现滚动条的节点
         className: "page",//每一页的class
-        offset: -50,//设置偏移量
+        direction: "horizontal",//水平方向
         turnPage: turnPage,//滚动翻页回调
         beforeFlipPage: beforeFlipPage,//跳转前回调
         afterFlipPage: afterFlipPage//跳转后回调

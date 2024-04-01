@@ -1,119 +1,148 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>测试页面</title>
     <style type="text/css">
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        /*#scroll{*/
-        /*    width: 600px;*/
-        /*    height: 1100px;*/
-        /*    overflow: auto;*/
-        /*}*/
-        .page{position:relative; width:600px; height:1000px; border:1px solid black; page-break-before: always;}
-        .page .foot{font-size: 14px; width: 100%; position: absolute; bottom: 8px;}
-        .page .center{text-align: center !important;}
+
+        .title {
+            width: 500px;
+            text-align: center;
+        }
+
+        #scroll-box {
+            width: 600px;
+            height: 400px;
+            overflow: auto;
+        }
+
+        .page {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            page-break-before: always;
+        }
+
+        .page .foot {
+            font-size: 14px;
+            width: 100%;
+            position: absolute;
+            bottom: 8px;
+        }
+
+        .page .center {
+            text-align: center !important;
+        }
+
+        .page div {
+            text-align: center
+        }
+
+        #pages-box {
+            position: absolute;
+            top: 52px;
+            left: 650px;
+        }
+
+        .page-number {
+            margin-bottom: 5px;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            border: 2px solid grey;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #33333333;
+        }
     </style>
-    <script type="text/javascript" src="../dist/wings-booklet.js"></script>
+    <script src="../dist/wings-booklet.js" type="text/javascript"></script>
 </head>
 <body>
-    <div style="text-align: center">
-        <h1>测试内容</h1>
-        <h4>打开控制台查看输出内容</h4>
-    </div>
+<div class="title">
+    <h2>测试内容</h2>
+    <h4>打开控制台查看输出内容</h4>
+</div>
 
-    <div id="scroll">
-        <div class="page">
-            <div>第一页</div>
-            <div class="foot center"><span>第 1 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第二页</div>
-            <div class="foot center"><span>第 2 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第三页</div>
-            <div class="foot center"><span>第 3 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第四页</div>
-            <div class="foot center"><span>第 4 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第五页</div>
-            <div class="foot center"><span>第 5 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第六页</div>
-            <div class="foot center"><span>第 6 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第七页</div>
-            <div class="foot center"><span>第 7 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第八页</div>
-            <div class="foot center"><span>第 8 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第九页</div>
-            <div class="foot center"><span>第 9 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十页</div>
-            <div class="foot center"><span>第 10 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十一页</div>
-            <div class="foot center"><span>第 11 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十二页</div>
-            <div class="foot center"><span>第 12 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十三页</div>
-            <div class="foot center"><span>第 13 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十四页</div>
-            <div class="foot center"><span>第 14 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十五页</div>
-            <div class="foot center"><span>第 15 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十六页</div>
-            <div class="foot center"><span>第 16 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十七页</div>
-            <div class="foot center"><span>第 17 页 共 18 页</span></div>
-        </div>
-        <div class="page">
-            <div>第十八页</div>
-            <div class="foot center"><span>第 18 页 共 18 页</span></div>
-        </div>
+<div id="pages-box">
+    <div class="page-number active">1</div>
+    <div class="page-number">2</div>
+    <div class="page-number">3</div>
+    <div class="page-number">4</div>
+    <div class="page-number">5</div>
+    <div class="page-number">6</div>
+    <div class="page-number">7</div>
+    <div class="page-number">8</div>
+    <div class="page-number">9</div>
+    <div class="page-number">10</div>
+</div>
+
+<div id="scroll-box">
+    <div class="page">
+        <div>第一页</div>
+        <div class="foot center"><span>第 1 页 共 10 页</span></div>
     </div>
+    <div class="page">
+        <div>第二页</div>
+        <div class="foot center"><span>第 2 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第三页</div>
+        <div class="foot center"><span>第 3 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第四页</div>
+        <div class="foot center"><span>第 4 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第五页</div>
+        <div class="foot center"><span>第 5 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第六页</div>
+        <div class="foot center"><span>第 6 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第七页</div>
+        <div class="foot center"><span>第 7 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第八页</div>
+        <div class="foot center"><span>第 8 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第九页</div>
+        <div class="foot center"><span>第 9 页 共 10 页</span></div>
+    </div>
+    <div class="page">
+        <div>第十页</div>
+        <div class="foot center"><span>第 10 页 共 10 页</span></div>
+    </div>
+</div>
 </body>
 <script type="text/javascript">
+    let scrollDom = document.getElementById("scroll-box");//出现滚动条的节点
     let booklet = new WingsBooklet({
-        scrollDom: document.body,
-        className: "page",
-        direction: "vertical",//垂直方向
-        easingFun: WingsBooklet.Easing.Elastic.easeInOut,//缓动类型（参照./assets/images/欢动函数.png）
+        scrollDom: scrollDom,//出现滚动条的节点
+        className: "page",//每一页的class
+        easingFun: WingsBooklet.Easing.Elastic.easeInOut,//设置缓动
         flipDuration: 2000,//跳转的时长
         turnPage: turnPage,//滚动翻页回调
         beforeFlipPage: beforeFlipPage,//跳转前回调
         afterFlipPage: afterFlipPage//跳转后回调
     });
 
+    bindClick();//绑定页面的点击事件
+
     //滚动翻页后回调(滚动翻页时触发)
     function turnPage(pastIndex, currentIndex) {
+        changePageNumber(currentIndex);
         console.log("turnPage", `从 ${pastIndex} 到 ${currentIndex}`);
     }
 
@@ -127,20 +156,29 @@
         console.log("afterFlipPage", `当前是 ${currentIndex}`);
     }
 
-    setTimeout(() => {
-        booklet.setEasing("linear");//设置缓动函数
-        booklet.flipTo(3);
-    }, 3000);
+    //切换当前页码
+    function changePageNumber(pageIndex) {
+        const className = "active";
+        let activePages = Array.from(document.getElementsByClassName(className));
+        if(activePages) {
+            activePages.forEach(o => {
+                o?.classList?.remove(className);
+            });
+        }
+        let pageNumbers = Array.from(document.getElementsByClassName("page-number"));
+        pageNumbers[pageIndex].classList?.add(className);
+    }
 
-    setTimeout(() => {
-        booklet.setFlipDuration(500);//设置跳转时长
-        booklet.flipTo(10);
-    }, 6000);
-
-    setTimeout(() => {
-        //链式设置缓动函数和时长
-        booklet.setEasing(WingsBooklet.Easing.Bounce.easeInOut).setFlipDuration(2000).flipTo(0);
-    }, 9000);
+    //绑定页码点击事件
+    function bindClick() {
+        let pageNumbers = Array.from(document.getElementsByClassName("page-number"));
+        pageNumbers.forEach((o, i) => {
+            o.onclick = (e) => {
+                booklet.flipTo(i);
+                changePageNumber(i);//同步改变页码
+            }
+        })
+    }
 
 </script>
 </html>
