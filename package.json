@@ -1,6 +1,6 @@
 {
   "name": "@sword0916/wings-booklet",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "scroll page 分页",
   "private": false,
   "main": "./src",
