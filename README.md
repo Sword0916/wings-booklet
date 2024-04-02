@@ -33,10 +33,12 @@ booklet = new WingsBooklet({
     splitProportions: [0.1, 0.2, 0.1, 0.2, 0.1, 0.2, 0.1],
 })
 ```
-####多节点垂直示例
+多节点垂直示例
+
 ![01多节点垂直分页.gif](https://upload-images.jianshu.io/upload_images/29665657-6bf4ff9897c490b8.gif?imageMogr2/auto-orient/strip)
 
-####单节点水平示例
+单节点水平示例
+
 ![04单节点水平等分分页.gif](https://upload-images.jianshu.io/upload_images/29665657-55fcb1d88c796fc9.gif?imageMogr2/auto-orient/strip)
 ### 2、参数列表
 
@@ -85,14 +87,16 @@ booklet.setEasing(WingsBooklet.Easing.Elastic.easeInOut);
 ```javascript
 booklet.setFlipDuration(2000);
 ```
-####设置缓动函数和跳转时长示例
+设置缓动函数和跳转时长示例
+
 ![09设置缓动和时长.gif](https://upload-images.jianshu.io/upload_images/29665657-ddabeed12575b13d.gif?imageMogr2/auto-orient/strip)
 
 ### 3、设置跳转偏移量
 ```javascript
 booklet.setOffset(-50);
 ```
-####设置偏移量示例
+设置偏移量示例
+
 ![10设置偏移量.gif](https://upload-images.jianshu.io/upload_images/29665657-cbcc069317903301.gif?imageMogr2/auto-orient/strip)
 
 
@@ -105,5 +109,6 @@ booklet.setOffset(200).setEasing(WingsBooklet.Easing.Bounce.easeInOut).setFlipDu
 ```javascript
 booklet.refresh();
 ```
-####刷新小册子示例
+刷新小册子示例
+
 ![11刷新小册子.gif](https://upload-images.jianshu.io/upload_images/29665657-000ef9416223477c.gif?imageMogr2/auto-orient/strip)
